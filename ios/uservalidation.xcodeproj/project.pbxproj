@@ -20,6 +20,10 @@
 		595E6483B104DFF9C25B38E4 /* libPods-uservalidation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C663E92085DB2D657E36F0F1 /* libPods-uservalidation.a */; };
 		5F490BD08432C476907ED8C0 /* libPods-uservalidationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BDFF46A9EB09A2373F2E069 /* libPods-uservalidationTests.a */; };
 		736525CEC21709936FDF8685 /* libPods-uservalidation-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F8208300A60444DAE7F775 /* libPods-uservalidation-tvOSTests.a */; };
+		9F9835B12419C34300F1A65D /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F9835AD2419C34300F1A65D /* OpenSans-Light.ttf */; };
+		9F9835B22419C34300F1A65D /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F9835AE2419C34300F1A65D /* OpenSans-Regular.ttf */; };
+		9F9835B32419C34300F1A65D /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F9835AF2419C34300F1A65D /* OpenSans-SemiBold.ttf */; };
+		9F9835B42419C34300F1A65D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F9835B02419C34300F1A65D /* OpenSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		54E323DB5CAF8963F1EDAD84 /* Pods-uservalidation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uservalidation.release.xcconfig"; path = "Target Support Files/Pods-uservalidation/Pods-uservalidation.release.xcconfig"; sourceTree = "<group>"; };
 		5BDFF46A9EB09A2373F2E069 /* libPods-uservalidationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uservalidationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF2777FA9226A7AC0C3276A /* libPods-uservalidation-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uservalidation-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F9835AD2419C34300F1A65D /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Light.ttf"; path = "../assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		9F9835AE2419C34300F1A65D /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		9F9835AF2419C34300F1A65D /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiBold.ttf"; path = "../assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		9F9835B02419C34300F1A65D /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		B82F1C68DF26480E04E17FC5 /* Pods-uservalidationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uservalidationTests.debug.xcconfig"; path = "Target Support Files/Pods-uservalidationTests/Pods-uservalidationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE27332093727911117D0A76 /* Pods-uservalidation-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uservalidation-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-uservalidation-tvOSTests/Pods-uservalidation-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C05E7458D13BE55FF77EF004 /* Pods-uservalidation-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uservalidation-tvOS.release.xcconfig"; path = "Target Support Files/Pods-uservalidation-tvOS/Pods-uservalidation-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +167,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				9F9835AC2419C31100F1A65D /* Rresources */,
 				13B07FAE1A68108700A75B9A /* uservalidation */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* uservalidationTests */,
@@ -182,6 +191,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9F9835AC2419C31100F1A65D /* Rresources */ = {
+			isa = PBXGroup;
+			children = (
+				9F9835B02419C34300F1A65D /* OpenSans-Bold.ttf */,
+				9F9835AD2419C34300F1A65D /* OpenSans-Light.ttf */,
+				9F9835AE2419C34300F1A65D /* OpenSans-Regular.ttf */,
+				9F9835AF2419C34300F1A65D /* OpenSans-SemiBold.ttf */,
+			);
+			name = Rresources;
+			sourceTree = "<group>";
+		};
 		F0056BACD4FE538B6EAD1EDF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +214,6 @@
 				B82F1C68DF26480E04E17FC5 /* Pods-uservalidationTests.debug.xcconfig */,
 				0C31F5C84BE4961B0569D5F7 /* Pods-uservalidationTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +327,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -336,7 +356,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F9835B12419C34300F1A65D /* OpenSans-Light.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9F9835B42419C34300F1A65D /* OpenSans-Bold.ttf in Resources */,
+				9F9835B32419C34300F1A65D /* OpenSans-SemiBold.ttf in Resources */,
+				9F9835B22419C34300F1A65D /* OpenSans-Regular.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
