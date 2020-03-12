@@ -18,7 +18,6 @@ const mapDispatchToProps = dispatch => {
     setLoading: state => dispatch(setLoading(state)),
     getDeviceInfo: () => dispatch(getDeviceInfo()),
     setUser: user => dispatch(setUser(user)),
-    getRandomUser: () => dispatch(getRandomUser()),
   };
 };
 

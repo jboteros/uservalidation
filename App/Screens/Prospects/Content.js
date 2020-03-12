@@ -26,6 +26,25 @@ export default class Prospects extends Component {
     await getDeviceInfo();
     setLoading(false);
   }
+
+  async actionSetUser(user) {
+    const {setUser, setLoading} = this.props;
+    setLoading(true);
+    await setUser(user);
+    setLoading(false);
+  }
+
+  async actionGetRandomUser() {
+    const {getRandomUser, setLoading, navigation} = this.props;
+    setLoading(true);
+
+    getRandomUser().then(user => {
+      this.actionSetUser(user);
+      navigation.navigate('Prospects');
+      setLoading(false);
+    });
+  }
+
   render() {
     const {navigation, users} = this.props;
 
@@ -45,6 +64,13 @@ export default class Prospects extends Component {
                 style={styles.itemHeader}>
                 <Image source={Images.back} style={styles.smallBtn} />
               </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  this.actionGetRandomUser();
+                }}
+                style={styles.itemHeader}>
+                <Image source={Images.random} style={styles.smallBtn} />
+              </TouchableOpacity>
             </View>
             <Text style={styles.welcomeTitle}>{'Visualizar prospectos'}</Text>
             <Text style={styles.welcomeText}>
@@ -60,7 +86,6 @@ export default class Prospects extends Component {
                 data={_.orderBy(users, 'dob.age', 'asc').reverse()}
                 showsVerticalScrollIndicator={false}
                 renderItem={({item}) => {
-
                   return (
                     <TouchableOpacity
                       style={[styles.listUsers, styles.shadows]}>

@@ -10,7 +10,7 @@ export const setUser = user => async (dispatch, navigation) => {
   //FIXME: Add navigator system
   if (validateId(id) && validateJudicialBackground(id)) {
     let score = validateScore();
-    if (score >= 60) {
+    if (score >= 20) {
       let userData = {...user, ranking: score, uid: Globals.create_UUID()};
       return dispatch({type: SET_USER, payload: userData});
     } else {
@@ -19,11 +19,10 @@ export const setUser = user => async (dispatch, navigation) => {
         `El usuario ingresado no cumple con el puntaje necesario para poseer productos\n\n${user.firstName} ${user.lastName}\n${score}%`,
         [
           {
-            text: 'Revisar formulario',
-          },
-          {
             text: 'Cancel',
-            onPress: () => dispatch(NavigationActions.navigate('Home')),
+            onPress: () =>
+              dispatch(NavigationActions.navigate({routeName: 'Prospects'})),
+
             style: 'cancel',
           },
         ],
@@ -37,17 +36,25 @@ export const setUser = user => async (dispatch, navigation) => {
       'El usuario ingresado no cumple las politicas de la compañia\n\nEl sistema no logra identificar su documento o el usuario posee antecedentes judiciales',
       [
         {
-          text: 'Revisar formulario',
-        },
-        {
           text: 'Cancel',
-          onPress: () => dispatch(NavigationActions.navigate('Home')),
+          onPress: () =>
+            dispatch(NavigationActions.navigate({routeName: 'Prospects'})),
           style: 'cancel',
         },
       ],
       {cancelable: false},
     );
   }
+};
+
+export const goProspects = () => {
+  const nav = NavigationActions.navigate({
+    //Let's navigate to Main first
+    routeName: 'Prospects',
+    // and then go to BookList
+    action: NavigationActions.navigate({routeName: 'Prospects'}),
+  });
+  return nav;
 };
 
 const validateId = id => {

@@ -54,6 +54,7 @@ export default StyleSheet.create({
     alignSelf: 'center',
     paddingTop: Metrics.addHeader,
     // position: 'absolute',
+    justifyContent: 'space-between',
   },
   footer: {
     flex: 0,

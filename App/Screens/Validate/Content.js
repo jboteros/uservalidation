@@ -64,13 +64,6 @@ export default class Validate extends Component {
                 style={styles.itemHeader}>
                 <Image source={Images.back} style={styles.smallBtn} />
               </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  this.actionGetRandomUser();
-                }}
-                style={styles.itemHeader}>
-                <Image source={Images.random} style={styles.smallBtn} />
-              </TouchableOpacity>
             </View>
             <Text style={styles.welcomeTitle}>{'Validar usuario'}</Text>
             <Text style={styles.welcomeText}>
