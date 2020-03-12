@@ -19,7 +19,7 @@ export default data => {
             backgroundColor: Colors.colorMask(0.7),
           },
         ]}>
-        <PacmanIndicator color={Colors.accentColors[0]} />
+        <PacmanIndicator color={Colors.accentBlue} />
       </View>
     );
   } else {

@@ -34,6 +34,11 @@ export default class Validate extends Component {
     await getDeviceInfo();
     setLoading(false);
   }
+
+  async actionSetUser() {
+    const {setUser} = this.props;
+    setUser(null);
+  }
   render() {
     const {navigation} = this.props;
 
@@ -70,9 +75,9 @@ export default class Validate extends Component {
               <MyTextInput
                 title={'Nombres'}
                 keyboardType={null}
-                autoCapitalize={null}
-                textContent={null}
-                secureText={null}
+                autoCapitalize={'words'}
+                textContent={'name'}
+                secureText={false}
                 pHolder={'Ingresa nombres'}
                 onChangeText={text => this.setState({firstName: text})}
                 text={this.state.firstName}
@@ -80,19 +85,19 @@ export default class Validate extends Component {
               <MyTextInput
                 title={'Apellidos'}
                 keyboardType={null}
-                autoCapitalize={null}
-                textContent={null}
-                secureText={null}
+                autoCapitalize={'words'}
+                textContent={'familyName'}
+                secureText={false}
                 pHolder={'Ingresa apellidos'}
                 onChangeText={text => this.setState({lastName: text})}
                 text={this.state.lastName}
               />
               <MyTextInput
                 title={'Fecha de nacimiento'}
-                keyboardType={null}
-                autoCapitalize={null}
-                textContent={null}
-                secureText={null}
+                // keyboardType={null}
+                autoCapitalize={'none'}
+                // textContent={null}
+                // secureText={null}
                 pHolder={'Ingresa la fecha de nacimiento'}
                 onChangeText={text => this.setState({lastName: text})}
                 text={this.state.lastName}
@@ -101,10 +106,10 @@ export default class Validate extends Component {
               <Text style={styles.titles}>{'Documento de identidad'}</Text>
               <MyTextInput
                 title={'Tipo de documento'}
-                keyboardType={null}
-                autoCapitalize={null}
-                textContent={null}
-                secureText={null}
+                // keyboardType={null}
+                autoCapitalize={'none'}
+                // textContent={null}
+                // secureText={null}
                 pHolder={
                   'Cedula de ciudadania, cedula extranjera, diplomatico, etc...'
                 }
@@ -113,20 +118,20 @@ export default class Validate extends Component {
               />
               <MyTextInput
                 title={'Numero documento'}
-                keyboardType={null}
-                autoCapitalize={null}
-                textContent={null}
-                secureText={null}
+                // keyboardType={null}
+                autoCapitalize={'none'}
+                // textContent={null}
+                // secureText={null}
                 pHolder={'Ingresa el numero de documento'}
                 onChangeText={text => this.setState({id: text})}
                 text={this.state.id}
               />
               <MyTextInput
                 title={'Fecha de expedicion'}
-                keyboardType={null}
-                autoCapitalize={null}
-                textContent={null}
-                secureText={null}
+                // keyboardType={null}
+                autoCapitalize={'none'}
+                // textContent={null}
+                // secureText={null}
                 pHolder={'Ingresa la fecha de expedicion del documento'}
                 onChangeText={text => this.setState({lastName: text})}
                 text={this.state.lastName}
@@ -135,8 +140,8 @@ export default class Validate extends Component {
 
               <MyTextInput
                 title={'Telefono'}
-                keyboardType={null}
-                autoCapitalize={null}
+                keyboardType={'phone-pad'}
+                autoCapitalize={'none'}
                 textContent={null}
                 secureText={null}
                 pHolder={'Ingresa un numero de contacto'}
@@ -146,7 +151,7 @@ export default class Validate extends Component {
               <MyTextInput
                 title={'Correo electronico'}
                 keyboardType={null}
-                autoCapitalize={null}
+                autoCapitalize={'none'}
                 textContent={null}
                 secureText={null}
                 pHolder={'Ingresa correo electronico'}
@@ -156,7 +161,7 @@ export default class Validate extends Component {
               <MyTextInput
                 title={'Dirección'}
                 keyboardType={null}
-                autoCapitalize={null}
+                autoCapitalize={'none'}
                 textContent={null}
                 secureText={null}
                 pHolder={'Ingresa una dirección'}
@@ -169,7 +174,8 @@ export default class Validate extends Component {
           <View style={styles.footer}>
             <TouchableOpacity
               onPress={() => {
-                Alert.alert('Ups...', 'Funcionalidad en desarrollo');
+                // Alert.alert('Ups...', 'Funcionalidad en desarrollo');
+                this.actionSetUser();
               }}
               style={[
                 styles.itemFooter,

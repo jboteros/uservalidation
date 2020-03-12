@@ -28,7 +28,7 @@ export default StyleSheet.create({
   smallBtn: {width: 30, height: 30, tintColor: Colors.light},
   accentImage: {
     zIndex: 100,
-    width: Metrics.screenWidth,
+    width: '100%',
     height: '100%',
     position: 'absolute',
     resizeMode: 'cover',
@@ -43,7 +43,6 @@ export default StyleSheet.create({
   },
   contentHeader: {
     flex: 0,
-    backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -54,6 +53,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'center',
     paddingTop: Metrics.addHeader,
+    // position: 'absolute',
   },
   footer: {
     flex: 0,
@@ -78,7 +78,7 @@ export default StyleSheet.create({
   },
 
   shadows: {
-    shadowColor: Colors.dark,
+    shadowColor: Colors.colorMask(0.25),
     shadowOffset: {
       width: 1,
       height: 2,
@@ -86,7 +86,7 @@ export default StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 1.0,
 
-    elevation: 5,
+    elevation: 2,
   },
 
   welcomeTitle: {
@@ -107,6 +107,12 @@ export default StyleSheet.create({
 
   userId: {
     ...Fonts.style.bold(Colors.dark, Fonts.size.h6, 'center'),
+  },
+  name: {
+    ...Fonts.style.bold(Colors.dark, Fonts.size.medium, 'left'),
+  },
+  email: {
+    ...Fonts.style.regular(Colors.gray, Fonts.size.medium, 'left'),
   },
 
   listUsers: {
