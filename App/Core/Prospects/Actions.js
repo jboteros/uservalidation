@@ -1,7 +1,7 @@
 import {SET_USER} from './Types';
 import {Alert} from 'react-native';
 import {NavigationActions} from 'react-navigation';
-
+import * as Globals from '../../Helpers/Globals';
 export const setUser = user => async (dispatch, navigation) => {
   let id = parseInt(user.id);
 
@@ -9,7 +9,7 @@ export const setUser = user => async (dispatch, navigation) => {
   if (validateId(id) && validateJudicialBackground(id)) {
     let score = validateScore();
     if (score >= 60) {
-      let userData = {...user, ranking: score};
+      let userData = {...user, ranking: score, id: Globals.create_UUID()};
       return dispatch({type: SET_USER, payload: userData});
     } else {
       Alert.alert(
