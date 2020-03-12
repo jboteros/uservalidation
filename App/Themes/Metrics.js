@@ -11,13 +11,8 @@ const addHeader = Platform.OS === 'ios' ? (isXSeriesIphone ? 40 : 20) : 0;
 
 console.log('addHeader', addHeader);
 const metrics = {
-  videoExpanded: (1080 / 1942) * width,
-  bigImage: (1200 / 1080) * width,
-  // middleImage: (600 / 1080) * width,
-  middleImage: wth => (600 / 1080) * wth,
-  smallImage: wth => (400 / 1080) * wth,
+  image: (1200 / 1080) * width,
 
-  videoCollapsed: 80,
   header: 60 + addHeader,
   addHeader,
   footerMenu: 50 + addFooter,
@@ -32,8 +27,8 @@ const metrics = {
   smallMargin: 5,
   doubleSection: 50,
   horizontalLineHeight: 1,
-  borderRadius: 5,
-  textInBr: 10,
+  borderRadius: 50,
+  textInBorderRadius: 10,
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
   blurRadius: Platform.OS === 'ios' ? 20 : 10,
