@@ -66,13 +66,13 @@ export default class Prospects extends Component {
                       style={[styles.listUsers, styles.shadows]}>
                       <View style={[styles.itemUser, styles.shadows]}>
                         <Text style={styles.userId}>
-                          {item.name.first[0]}
-                          {item.name.last[0]}
+                          {item.firstName[0]}
+                          {item.lastName[0]}
                         </Text>
                       </View>
                       <View style={styles.userDetailContainer}>
                         <Text style={styles.name}>
-                          {item.name.first} {item.name.last}
+                          {item.firstName} {item.lastName}
                         </Text>
                         <Text style={styles.email}>{item.email}</Text>
                       </View>
@@ -80,9 +80,9 @@ export default class Prospects extends Component {
                         style={[
                           styles.statusUser,
                           styles.shadows,
-                          {backgroundColor: Globals.perc2color(item.dob.age)},
+                          {backgroundColor: Globals.perc2color(item.ranking)},
                         ]}>
-                        <Text style={styles.rankingText}>{item.dob.age}%</Text>
+                        <Text style={styles.rankingText}>{item.ranking}%</Text>
                       </View>
                     </TouchableOpacity>
                   );

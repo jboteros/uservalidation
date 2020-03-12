@@ -39,7 +39,7 @@ export default class Home extends Component {
           <View style={styles.footer}>
             <TouchableOpacity
               onPress={() => {
-                console.log('test');
+                console.log('test:Validate');
                 navigation.navigate('Validate');
               }}
               style={[

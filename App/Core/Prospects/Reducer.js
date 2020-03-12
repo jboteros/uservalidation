@@ -6,10 +6,15 @@ const initialState = {
 };
 
 const setUser = (state = initialState, {payload}) => {
-  console.log(state, payload);
+  console.log('reducer:setUser', state, payload);
+  let stateUsers = state.users;
+
+  stateUsers.push(payload);
+
+  console.log('stateUsers', stateUsers);
   return {
     ...state,
-    users: [...state.users, ...payload],
+    users: stateUsers,
   };
 };
 
