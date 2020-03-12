@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import 'react-native';
 
 import AsyncStorage from '@react-native-community/async-storage';
