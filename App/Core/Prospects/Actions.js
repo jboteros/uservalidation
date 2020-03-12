@@ -1,7 +1,9 @@
 import {SET_USER} from './Types';
 import {Alert} from 'react-native';
 import {NavigationActions} from 'react-navigation';
+
 import * as Globals from '../../Helpers/Globals';
+
 export const setUser = user => async (dispatch, navigation) => {
   let id = parseInt(user.id);
 
@@ -9,7 +11,7 @@ export const setUser = user => async (dispatch, navigation) => {
   if (validateId(id) && validateJudicialBackground(id)) {
     let score = validateScore();
     if (score >= 60) {
-      let userData = {...user, ranking: score, id: Globals.create_UUID()};
+      let userData = {...user, ranking: score, uid: Globals.create_UUID()};
       return dispatch({type: SET_USER, payload: userData});
     } else {
       Alert.alert(
@@ -66,4 +68,27 @@ const validateJudicialBackground = id => {
 const validateScore = () => {
   let random = Math.floor(Math.random() * 100) + 1;
   return random;
+};
+
+export const getRandomUser = () => async () => {
+  try {
+    let response = await fetch('https://randomuser.me/api/');
+    let responseJson = await response.json();
+
+    let user = responseJson.results[0];
+
+    let data = {
+      firstName: user.name.first,
+      lastName: user.name.last,
+      email: user.email,
+      birthday: user.dob.date.slice(0, 10),
+      userPermissions: true,
+      uid: Globals.create_UUID(),
+      id: Globals.randomId(),
+    };
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 };

@@ -28,7 +28,7 @@ export default StyleSheet.create({
   smallBtn: {width: 30, height: 30, tintColor: Colors.light},
   accentImage: {
     zIndex: 100,
-    width: Metrics.screenWidth,
+    width: '100%',
     height: '100%',
     position: 'absolute',
     resizeMode: 'cover',
@@ -43,7 +43,7 @@ export default StyleSheet.create({
   },
   contentHeader: {
     flex: 0,
-    backgroundColor: 'red',
+
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -51,6 +51,7 @@ export default StyleSheet.create({
     flex: 0,
     zIndex: 200,
     width: '90%',
+    justifyContent: 'space-between',
     flexDirection: 'row',
     alignSelf: 'center',
     paddingTop: Metrics.addHeader,

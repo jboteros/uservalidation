@@ -10,7 +10,6 @@ import {
   Alert,
 } from 'react-native';
 
-import MyTextInput from '../../Components/MyTextInput';
 import {Colors, Fonts, Images} from '../../Themes';
 
 import styles from './styles';
@@ -30,8 +29,21 @@ export default class Validate extends Component {
   }
 
   async actionSetUser(user) {
-    const {setUser} = this.props;
+    const {setUser, setLoading} = this.props;
+    setLoading(true);
     await setUser(user);
+    setLoading(false);
+  }
+
+  async actionGetRandomUser() {
+    const {getRandomUser, setLoading, navigation} = this.props;
+    setLoading(true);
+
+    getRandomUser().then(user => {
+      this.actionSetUser(user);
+      navigation.navigate('Prospects');
+      setLoading(false);
+    });
   }
   render() {
     const {navigation} = this.props;
@@ -52,6 +64,13 @@ export default class Validate extends Component {
                 style={styles.itemHeader}>
                 <Image source={Images.back} style={styles.smallBtn} />
               </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  this.actionGetRandomUser();
+                }}
+                style={styles.itemHeader}>
+                <Image source={Images.random} style={styles.smallBtn} />
+              </TouchableOpacity>
             </View>
             <Text style={styles.welcomeTitle}>{'Validar usuario'}</Text>
             <Text style={styles.welcomeText}>
@@ -66,6 +85,9 @@ export default class Validate extends Component {
             style={styles.KeyboardAvoidingView}>
             <ScrollView style={styles.formContainer}>
               <FormUser
+                ref={nav => {
+                  this.formUser = nav;
+                }}
                 validateUser={user => {
                   this.actionSetUser(user);
                 }}

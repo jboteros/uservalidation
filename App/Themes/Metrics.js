@@ -6,7 +6,8 @@ const {width, height} = Dimensions.get('window');
 const isXSeriesIphone = ifIphoneX;
 
 const addFooter = Platform.OS === 'ios' && isXSeriesIphone ? 20 : 0;
-const addHeader = Platform.OS === 'ios' ? (isXSeriesIphone ? 40 : 20) : 0;
+const addHeader =
+  Platform.OS === 'ios' ? (width > height ? 0 : isXSeriesIphone ? 40 : 20) : 0;
 
 const metrics = {
   image: (1200 / 1080) * width,
