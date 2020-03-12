@@ -98,10 +98,7 @@ export default StyleSheet.create({
     width: '80%',
     marginVertical: 20,
   },
-  titles: {
-    marginVertical: 20,
-    ...Fonts.style.bold(Colors.dark, Fonts.size.medium, 'center'),
-  },
+
   separator: {marginVertical: 20},
   KeyboardAvoidingView: {flex: 1},
 });

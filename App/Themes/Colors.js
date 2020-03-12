@@ -1,5 +1,4 @@
 const colors = {
-  accentColors: ['#00acb3', '#3ebfb4', '#16d8d8'],
   accentBlue: '#3c65ec',
   accentGreen: '#04945e',
   light: '#fff',
