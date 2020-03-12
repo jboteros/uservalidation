@@ -60,7 +60,7 @@ export default class Prospects extends Component {
                 data={_.orderBy(users, 'dob.age', 'asc').reverse()}
                 showsVerticalScrollIndicator={false}
                 renderItem={({item}) => {
-                  console.log(item);
+
                   return (
                     <TouchableOpacity
                       style={[styles.listUsers, styles.shadows]}>

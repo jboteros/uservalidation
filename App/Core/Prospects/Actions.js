@@ -18,7 +18,6 @@ export const setUser = user => async (dispatch, navigation) => {
         [
           {
             text: 'Revisar formulario',
-            onPress: () => console.log('review'),
           },
           {
             text: 'Cancel',
@@ -37,7 +36,6 @@ export const setUser = user => async (dispatch, navigation) => {
       [
         {
           text: 'Revisar formulario',
-          onPress: () => console.log('review'),
         },
         {
           text: 'Cancel',
@@ -51,7 +49,6 @@ export const setUser = user => async (dispatch, navigation) => {
 };
 
 const validateId = id => {
-  console.log('validateId', id, id % 2);
   if (id % 2) {
     return true;
   } else {
@@ -59,7 +56,6 @@ const validateId = id => {
   }
 };
 const validateJudicialBackground = id => {
-  console.log('validateJudicialBackground', id, id % 2);
   if (id % 2) {
     return true;
   } else {

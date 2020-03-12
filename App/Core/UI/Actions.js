@@ -25,27 +25,9 @@ export const getDeviceInfo = () => async dispatch => {
         deviceInfo.appType = 'expert';
       }
 
-      // console.log('deviceInfo', deviceInfo);
       return resolve(dispatch({type: DEVICE_INFO, payload: deviceInfo}));
     } catch (e) {
       console.log('Trouble getting device info ', e);
     }
   });
 };
-
-// export const getDeviceInfo = async dispatch => {
-//   let deviceJSON = {};
-
-//   try {
-//     deviceJSON.bundleId = await DeviceInfo.getBundleId();
-//     deviceJSON.buildNumber = await DeviceInfo.getBuildNumber();
-//     deviceJSON.version = await DeviceInfo.getVersion();
-//     deviceJSON.readableVersion = await DeviceInfo.getReadableVersion();
-
-//     console.log('deviceJSON', deviceJSON);
-//     // dispatch({type: DEVICE_INFO, payload: deviceJSON});
-//     return dispatch({type: DEVICE_INFO, payload: deviceJSON});
-//   } catch (e) {
-//     console.log('Trouble getting device info ', e);
-//   }
-// };
