@@ -102,4 +102,32 @@ export default StyleSheet.create({
 
   separator: {marginVertical: 20},
   KeyboardAvoidingView: {flex: 1},
+
+  prospectContainer: {
+    zIndex: 1000,
+    flex: 1,
+    width: Metrics.screenWidth,
+    height: Metrics.screenHeight,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    backgroundColor: Colors.colorMask(0.7),
+  },
+  prospect: {
+    width: Metrics.screenWidth * 0.8,
+
+    borderRadius: 10,
+    backgroundColor: Colors.light,
+    position: 'absolute',
+  },
+  btn: {
+    width: '90%',
+    paddingVertical: 20,
+    marginVertical: 10,
+    borderRadius: 50,
+    backgroundColor: Colors.accentGreen,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
 });

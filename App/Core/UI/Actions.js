@@ -1,9 +1,13 @@
-import {SET_LOADING, DEVICE_INFO} from './Types';
+import {SET_LOADING, DEVICE_INFO, SET_NEW_PROSPECT} from './Types';
 
 import DeviceInfo from 'react-native-device-info';
 
 export const setLoading = state => dispatch => {
   dispatch({type: SET_LOADING, payload: state});
+};
+
+export const setNewProspect = state => dispatch => {
+  dispatch({type: SET_NEW_PROSPECT, payload: state});
 };
 
 export const getDeviceInfo = () => async dispatch => {

@@ -1,6 +1,8 @@
 import {SET_USER} from './Types';
 import {Alert} from 'react-native';
+
 import {NavigationActions} from 'react-navigation';
+import {setNewProspect} from '../UI/Actions';
 
 import * as Globals from '../../Helpers/Globals';
 
@@ -10,8 +12,10 @@ export const setUser = user => async (dispatch, navigation) => {
   //FIXME: Add navigator system
   if (validateId(id) && validateJudicialBackground(id)) {
     let score = validateScore();
-    if (score >= 20) {
+
+    if (score >= 60) {
       let userData = {...user, ranking: score, uid: Globals.create_UUID()};
+      dispatch(setNewProspect(true));
       return dispatch({type: SET_USER, payload: userData});
     } else {
       Alert.alert(
@@ -20,8 +24,8 @@ export const setUser = user => async (dispatch, navigation) => {
         [
           {
             text: 'Cancel',
-            onPress: () =>
-              dispatch(NavigationActions.navigate({routeName: 'Prospects'})),
+            // onPress: () =>
+            //   dispatch(NavigationActions.navigate({routeName: 'Prospects'})),
 
             style: 'cancel',
           },
@@ -37,8 +41,9 @@ export const setUser = user => async (dispatch, navigation) => {
       [
         {
           text: 'Cancel',
-          onPress: () =>
-            dispatch(NavigationActions.navigate({routeName: 'Prospects'})),
+          // onPress: () =>
+          //   dispatch(NavigationActions.navigate({routeName: 'Prospects'})),
+
           style: 'cancel',
         },
       ],

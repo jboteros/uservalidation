@@ -10,15 +10,18 @@ import {
   Alert,
 } from 'react-native';
 
-import {Colors, Fonts, Images} from '../../Themes';
+import {Colors, Fonts, Images, Metrics} from '../../Themes';
 
 import styles from './styles';
 import FormUser from '../../Components/FormUser';
+import metrics from '../../Themes/Metrics';
 
 export default class Validate extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      user: null,
+    };
   }
 
   async componentDidMount() {
@@ -32,6 +35,7 @@ export default class Validate extends Component {
     const {setUser, setLoading} = this.props;
     setLoading(true);
     await setUser(user);
+    this.setState({user});
     setLoading(false);
   }
 
@@ -45,8 +49,18 @@ export default class Validate extends Component {
       setLoading(false);
     });
   }
+
+  async actionSetNewProspect() {
+    const {setNewProspect, navigation} = this.props;
+    try {
+      setNewProspect(false);
+      navigation.navigate('Prospects');
+    } catch (error) {
+      console.warn('setNewProspect:error', error);
+    }
+  }
   render() {
-    const {navigation} = this.props;
+    const {navigation, isProspect} = this.props;
 
     return (
       <View style={styles.container}>
@@ -88,6 +102,42 @@ export default class Validate extends Component {
             </ScrollView>
           </KeyboardAvoidingView>
         </View>
+
+        {isProspect && this.state.user && (
+          <View style={styles.prospectContainer}>
+            <View style={styles.prospect}>
+              <Text
+                style={[
+                  Fonts.style.bold(Colors.dark, Fonts.size.h6, 'center'),
+                  {marginTop: 10},
+                ]}>
+                Prospecto valido
+              </Text>
+              <Text
+                style={[
+                  Fonts.style.regular(Colors.dark, Fonts.size.medium, 'center'),
+                  {marginVertical: 10, marginHorizontal: 20},
+                ]}>
+                El usuario {this.state.user.firstName}{' '}
+                {this.state.user.lastName} es un prospecto valido.
+              </Text>
+              <TouchableOpacity
+                style={styles.btn}
+                onPress={() => {
+                  this.actionSetNewProspect();
+                }}>
+                <Text
+                  style={Fonts.style.bold(
+                    Colors.light,
+                    Fonts.size.medium,
+                    'center',
+                  )}>
+                  Ir a prospectos
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        )}
       </View>
     );
   }

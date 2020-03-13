@@ -112,7 +112,7 @@ export default class Prospects extends Component {
                     </TouchableOpacity>
                   );
                 }}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item.uid}
               />
             </View>
           </KeyboardAvoidingView>
