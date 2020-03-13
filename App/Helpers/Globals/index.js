@@ -25,3 +25,8 @@ export const create_UUID = () => {
   );
   return uuid;
 };
+export const randomId = () => {
+  const random = Math.floor(Math.random() * 1000000) + 1;
+
+  return random;
+};

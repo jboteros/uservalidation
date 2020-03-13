@@ -20,14 +20,14 @@ export default StyleSheet.create({
   },
   image: {
     zIndex: 50,
-    width: Metrics.screenWidth,
+    width: '100%',
     height: '100%',
     resizeMode: 'cover',
   },
 
   accentImage: {
     zIndex: 100,
-    width: Metrics.screenWidth,
+    width: '100%',
     height: '100%',
     resizeMode: 'cover',
   },

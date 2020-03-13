@@ -7,6 +7,7 @@ const images = {
   accentBlue: require('../Images/accentBlue.jpeg'),
 
   back: require('../Images/back.png'),
+  random: require('../Images/random.png'),
 };
 
 export default images;

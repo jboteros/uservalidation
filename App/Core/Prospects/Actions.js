@@ -1,15 +1,21 @@
 import {SET_USER} from './Types';
 import {Alert} from 'react-native';
+
 import {NavigationActions} from 'react-navigation';
+import {setNewProspect} from '../UI/Actions';
+
 import * as Globals from '../../Helpers/Globals';
+
 export const setUser = user => async (dispatch, navigation) => {
   let id = parseInt(user.id);
 
   //FIXME: Add navigator system
   if (validateId(id) && validateJudicialBackground(id)) {
     let score = validateScore();
+
     if (score >= 60) {
-      let userData = {...user, ranking: score, id: Globals.create_UUID()};
+      let userData = {...user, ranking: score, uid: Globals.create_UUID()};
+      dispatch(setNewProspect(true));
       return dispatch({type: SET_USER, payload: userData});
     } else {
       Alert.alert(
@@ -17,12 +23,10 @@ export const setUser = user => async (dispatch, navigation) => {
         `El usuario ingresado no cumple con el puntaje necesario para poseer productos\n\n${user.firstName} ${user.lastName}\n${score}%`,
         [
           {
-            text: 'Revisar formulario',
-            onPress: () => console.log('review'),
-          },
-          {
             text: 'Cancel',
-            onPress: () => dispatch(NavigationActions.navigate('Home')),
+            // onPress: () =>
+            //   dispatch(NavigationActions.navigate({routeName: 'Prospects'})),
+
             style: 'cancel',
           },
         ],
@@ -36,12 +40,10 @@ export const setUser = user => async (dispatch, navigation) => {
       'El usuario ingresado no cumple las politicas de la compañia\n\nEl sistema no logra identificar su documento o el usuario posee antecedentes judiciales',
       [
         {
-          text: 'Revisar formulario',
-          onPress: () => console.log('review'),
-        },
-        {
           text: 'Cancel',
-          onPress: () => dispatch(NavigationActions.navigate('Home')),
+          // onPress: () =>
+          //   dispatch(NavigationActions.navigate({routeName: 'Prospects'})),
+
           style: 'cancel',
         },
       ],
@@ -50,8 +52,17 @@ export const setUser = user => async (dispatch, navigation) => {
   }
 };
 
+export const goProspects = () => {
+  const nav = NavigationActions.navigate({
+    //Let's navigate to Main first
+    routeName: 'Prospects',
+    // and then go to BookList
+    action: NavigationActions.navigate({routeName: 'Prospects'}),
+  });
+  return nav;
+};
+
 const validateId = id => {
-  console.log('validateId', id, id % 2);
   if (id % 2) {
     return true;
   } else {
@@ -59,7 +70,6 @@ const validateId = id => {
   }
 };
 const validateJudicialBackground = id => {
-  console.log('validateJudicialBackground', id, id % 2);
   if (id % 2) {
     return true;
   } else {
@@ -70,4 +80,27 @@ const validateJudicialBackground = id => {
 const validateScore = () => {
   let random = Math.floor(Math.random() * 100) + 1;
   return random;
+};
+
+export const getRandomUser = () => async () => {
+  try {
+    let response = await fetch('https://randomuser.me/api/');
+    let responseJson = await response.json();
+
+    let user = responseJson.results[0];
+
+    let data = {
+      firstName: user.name.first,
+      lastName: user.name.last,
+      email: user.email,
+      birthday: user.dob.date.slice(0, 10),
+      userPermissions: true,
+      uid: Globals.create_UUID(),
+      id: Globals.randomId(),
+    };
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 };
