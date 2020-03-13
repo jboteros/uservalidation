@@ -5,6 +5,7 @@ const {defaults} = require('jest-config');
 
 module.exports = {
   preset: '@testing-library/react-native',
+
   clearMocks: true,
   moduleFileExtensions: [
     ...defaults.moduleFileExtensions,
@@ -15,11 +16,17 @@ module.exports = {
     'json',
     'node',
   ],
+  setupFiles: ['@testing-library/react-native/cleanup-after-each'],
   setupFilesAfterEnv: [
     ...jestPreset.setupFiles,
     '@testing-library/react-native/cleanup-after-each',
     '<rootDir>/enzyme.config.js',
   ],
+  haste: {
+    defaultPlatform: 'ios',
+    platforms: ['ios', 'android'],
+    providesModuleNodeModules: ['react-native'],
+  },
 
   testEnvironment: 'enzyme',
   testEnvironmentOptions: {
@@ -42,6 +49,7 @@ module.exports = {
   moduleDirectories: ['node_modules', 'components'],
   transformIgnorePatterns: [
     '<rootDir>/node_modules/',
+
     'node_modules/(?!(react-native|@testing-library|react-navigation|@react-navigation/.*|react-native-ui-kitten|react-native-linear-gradient|react-native-svg|@react-native-community/slider|react-native-camera|react-native-screens|react-navigation-stack|react-navigation-tabs|react-native-swipe-gestures|react-native-gesture-handler|react-native-safe-area-view|react-native-formik|react-native-root-siblings|react-native-modalbox|react-native-svg-charts|react-native-iphone-x-helper)/)',
     'node_modules/react-native-gesture-handler/jestSetup.js',
     '/node_modules/(?!react-native).+\\.js$',
