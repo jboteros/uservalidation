@@ -10,7 +10,7 @@ import {
 } from 'react-native-formik';
 import {TextField} from 'react-native-material-textfield';
 import * as Yup from 'yup';
-import DatePicker from '../DatePicker';
+
 import Switch from '../Switch';
 import {Metrics, Colors, Fonts} from '../../Themes';
 
@@ -22,10 +22,6 @@ const MyInput = compose(
 const Form = withNextInputAutoFocusForm(ScrollView, {
   submitAfterLastInput: false,
 });
-const FocusedDatePicker = compose(
-  withFormikControl,
-  withNextInputAutoFocusInput,
-)(DatePicker);
 
 Yup.setLocale({
   mixed: {
@@ -70,15 +66,10 @@ export default ({validateUser}) => {
             <MyInput label="Apellidos" name="lastName" type="name" />
 
             <MyInput label="Correo electronico" name="email" type="email" />
-            <FocusedDatePicker label="Fecha de nacimiento" name="birthday" />
 
             <Text style={styles.titles}>{'Identidad del usuario'}</Text>
 
             <MyInput label="Numero de documento" name="id" type="number" />
-            <FocusedDatePicker
-              label="Fecha de expedision"
-              name="idExpedition"
-            />
 
             <Switch
               label="¿El usuario esta informado sobre las politicas de habeas data?"

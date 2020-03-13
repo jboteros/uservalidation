@@ -30,6 +30,7 @@ class DatePicker extends React.PureComponent {
   };
 
   render() {
+    console.log(this.props);
     return (
       <React.Fragment>
         <DisableKeyboard onPress={this.openPicker}>
@@ -38,6 +39,8 @@ class DatePicker extends React.PureComponent {
             //FIXME: need force update after update date
             {...this.props}
             value={this.props.value ? this.props.value : undefined}
+            label={this.props.value ? this.props.value : undefined}
+
           />
         </DisableKeyboard>
         <DateTimePicker
