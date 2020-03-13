@@ -6,13 +6,12 @@ import {
   handleTextInput,
   withNextInputAutoFocusForm,
   withNextInputAutoFocusInput,
-  withFormikControl,
 } from 'react-native-formik';
 import {TextField} from 'react-native-material-textfield';
 import * as Yup from 'yup';
 
 import Switch from '../Switch';
-import {Metrics, Colors, Fonts} from '../../Themes';
+import {Colors, Fonts} from '../../Themes';
 
 import styles from './styles.js';
 const MyInput = compose(
@@ -59,7 +58,7 @@ export default ({validateUser}) => {
       initialValues={{userPermissions: false}}>
       {props => {
         return (
-          <Form style={{width: '90%', alignSelf: 'center'}}>
+          <Form style={styles.formContainer}>
             <Text style={styles.titles}>{'Datos del usuario'}</Text>
 
             <MyInput label="Nombres" name="firstName" type="name" />

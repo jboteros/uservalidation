@@ -40,7 +40,6 @@ class DatePicker extends React.PureComponent {
             {...this.props}
             value={this.props.value ? this.props.value : undefined}
             label={this.props.value ? this.props.value : undefined}
-
           />
         </DisableKeyboard>
         <DateTimePicker

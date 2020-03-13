@@ -20,4 +20,5 @@ export default StyleSheet.create({
 
     ...Fonts.style.bold(Colors.dark, Fonts.size.medium, 'center'),
   },
+  formContainer: {width: '90%', alignSelf: 'center'},
 });

@@ -7,6 +7,7 @@ import {setNewProspect} from '../UI/Actions';
 import * as Globals from '../../Helpers/Globals';
 
 export const setUser = user => async (dispatch, navigation) => {
+  // eslint-disable-next-line radix
   let id = parseInt(user.id);
 
   //FIXME: Add navigator system
@@ -20,6 +21,7 @@ export const setUser = user => async (dispatch, navigation) => {
     } else {
       Alert.alert(
         'Alerta',
+        // eslint-disable-next-line prettier/prettier
         `El usuario ingresado no cumple con el puntaje necesario para poseer productos\n\n${user.firstName} ${user.lastName}\n${score}%`,
         [
           {

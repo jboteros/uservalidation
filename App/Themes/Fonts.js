@@ -1,6 +1,3 @@
-import Colors from './Colors';
-import Metrics from './Metrics';
-
 const type = {
   light: 'OpenSans-Light',
   regular: 'OpenSans-Regular',

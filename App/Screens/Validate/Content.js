@@ -7,14 +7,12 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
-  Alert,
 } from 'react-native';
 
-import {Colors, Fonts, Images, Metrics} from '../../Themes';
+import {Colors, Fonts, Images} from '../../Themes';
 
 import styles from './styles';
 import FormUser from '../../Components/FormUser';
-import metrics from '../../Themes/Metrics';
 
 export default class Validate extends Component {
   constructor(props) {
@@ -109,14 +107,14 @@ export default class Validate extends Component {
               <Text
                 style={[
                   Fonts.style.bold(Colors.dark, Fonts.size.h6, 'center'),
-                  {marginTop: 10},
+                  styles.modalTitle,
                 ]}>
                 Prospecto valido
               </Text>
               <Text
                 style={[
                   Fonts.style.regular(Colors.dark, Fonts.size.medium, 'center'),
-                  {marginVertical: 10, marginHorizontal: 20},
+                  styles.modalContent,
                 ]}>
                 El usuario {this.state.user.firstName}{' '}
                 {this.state.user.lastName} es un prospecto valido.

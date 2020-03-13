@@ -1,8 +1,6 @@
 import {createReducer} from '../Config';
 import {SEND_USER} from './Types';
 
-import _ from 'lodash';
-
 const initialState = {
   users: [],
 };

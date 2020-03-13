@@ -1,3 +1,4 @@
+/* eslint-disable no-bitwise */
 export const perc2color = perc => {
   var r,
     g,

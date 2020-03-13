@@ -130,4 +130,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
   },
+  modalTitle: {marginTop: 10},
+  modalContent: {marginVertical: 10, marginHorizontal: 20},
 });
