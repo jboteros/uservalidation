@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.uservalidation"
+        applicationId "com.jbotero.uservalidation"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
