@@ -9,7 +9,6 @@ import * as Globals from '../../Helpers/Globals';
 export const setUser = user => async (dispatch, navigation) => {
   let id = parseInt(user.id);
 
-  //FIXME: Add navigator system
   if (validateId(id) && validateJudicialBackground(id)) {
     let score = validateScore();
 
@@ -34,7 +33,6 @@ export const setUser = user => async (dispatch, navigation) => {
       );
     }
   } else {
-    //FIXME: Add navigator system
     Alert.alert(
       'Alerta',
       'El usuario ingresado no cumple las politicas de la compañia\n\nEl sistema no logra identificar su documento o el usuario posee antecedentes judiciales',
@@ -78,7 +76,7 @@ const validateJudicialBackground = id => {
 };
 
 const validateScore = () => {
-  let random = Math.floor(Math.random() * 100) + 1;
+  let random = Math.floor(Math.random() * 60) + 40;
   return random;
 };
 

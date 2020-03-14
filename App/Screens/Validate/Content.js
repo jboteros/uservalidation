@@ -63,7 +63,7 @@ export default class Validate extends Component {
     const {navigation, isProspect} = this.props;
 
     return (
-      <View style={styles.container}>
+      <View testID={'validateScreen'} style={styles.container}>
         <View style={styles.content}>
           <View style={styles.contentHeader}>
             <View style={styles.imageContainer}>
@@ -72,6 +72,7 @@ export default class Validate extends Component {
             </View>
             <View style={styles.header}>
               <TouchableOpacity
+                testID={'backValidate'}
                 onPress={() => {
                   navigation.goBack();
                 }}
@@ -92,6 +93,7 @@ export default class Validate extends Component {
             style={styles.KeyboardAvoidingView}>
             <ScrollView style={styles.formContainer}>
               <FormUser
+                testID={'formUser'}
                 ref={nav => {
                   this.formUser = nav;
                 }}

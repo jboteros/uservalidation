@@ -49,7 +49,7 @@ export default class Prospects extends Component {
     const {navigation, users} = this.props;
 
     return (
-      <View style={styles.container}>
+      <View testID={'prospectScreen'} style={styles.container}>
         <View style={styles.content}>
           <View style={styles.contentHeader}>
             <View style={styles.imageContainer}>
@@ -58,6 +58,7 @@ export default class Prospects extends Component {
             </View>
             <View style={styles.header}>
               <TouchableOpacity
+                testID={'backProspects'}
                 onPress={() => {
                   navigation.goBack();
                 }}
@@ -65,6 +66,7 @@ export default class Prospects extends Component {
                 <Image source={Images.back} style={styles.smallBtn} />
               </TouchableOpacity>
               <TouchableOpacity
+                testID={'randomGenerator'}
                 onPress={() => {
                   this.actionGetRandomUser();
                 }}

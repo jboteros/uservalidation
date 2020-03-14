@@ -1,4 +1,4 @@
-package com.uservalidation;
+package com.jbotero.uservalidation;
 
 import com.facebook.react.ReactActivity;
 
