@@ -18,7 +18,7 @@ describe('AppNavigation', () => {
     await expect(element(by.id('homeScreen'))).toExist();
   });
 
-  it('navigate validate', async () => {
+  it('navigate to validate', async () => {
     await waitFor(element(by.id('validate')))
       .toExist()
       .withTimeout(2000);
@@ -26,7 +26,7 @@ describe('AppNavigation', () => {
   });
 });
 
-describe('validate flow', () => {
+describe('validate flow form', () => {
   it('validate screen successfully', async () => {
     await waitFor(element(by.id('validateScreen')))
       .toExist()
@@ -130,11 +130,5 @@ describe('prospects flow', () => {
       .toExist()
       .withTimeout(5000);
     await element(by.id('backProspects')).tap();
-  });
-});
-
-describe('a test test', () => {
-  it('is true', () => {
-    expect(true).toBe(true);
   });
 });
