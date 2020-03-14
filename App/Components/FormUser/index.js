@@ -62,20 +62,45 @@ export default ({validateUser}) => {
           <Form style={{width: '90%', alignSelf: 'center'}}>
             <Text style={styles.titles}>{'Datos del usuario'}</Text>
 
-            <MyInput label="Nombres" name="firstName" type="name" />
-            <MyInput label="Apellidos" name="lastName" type="name" />
+            <MyInput
+              testID={'firstName'}
+              te
+              label="Nombres"
+              name="firstName"
+              type="name"
+            />
+            <MyInput
+              testID={'lastName'}
+              label="Apellidos"
+              name="lastName"
+              type="name"
+            />
 
-            <MyInput label="Correo electronico" name="email" type="email" />
+            <MyInput
+              testID={'email'}
+              keyboardType="email-address"
+              label="Correo electronico"
+              name="email"
+              type="email"
+            />
 
             <Text style={styles.titles}>{'Identidad del usuario'}</Text>
 
-            <MyInput label="Numero de documento" name="id" type="number" />
+            <MyInput
+              testID={'doc'}
+              label="Numero de documento"
+              keyboardType="numeric"
+              name="id"
+              type="number"
+            />
 
             <Switch
+              testID={'userPermissions'}
               label="¿El usuario esta informado sobre las politicas de habeas data?"
               name="userPermissions"
             />
             <TouchableOpacity
+              testID={'continue'}
               onPress={props.handleSubmit}
               style={[
                 styles.itemFooter,

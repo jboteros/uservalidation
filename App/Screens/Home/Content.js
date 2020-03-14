@@ -22,15 +22,17 @@ export default class Home extends Component {
     const {navigation} = this.props;
 
     return (
-      <View style={styles.container}>
+      <View testID={'homeScreen'} style={styles.container}>
         <View style={styles.imageContainer}>
           <Image source={Images.imageYellow} style={styles.image} />
           <Image source={Images.accentImage} style={styles.accentImage} />
         </View>
         <View style={styles.content}>
           <View style={styles.contentHeader}>
-            <Text style={styles.welcomeTitle}>{'Validador de usuarios'}</Text>
-            <Text style={styles.welcomeText}>
+            <Text testID={'title'} style={styles.welcomeTitle}>
+              {'Validador de usuarios'}
+            </Text>
+            <Text testID={'subtitle'} style={styles.welcomeText}>
               {
                 'Ingresa la información del usuario a consultar y evaluamos el perfil de riesgo'
               }
@@ -38,6 +40,7 @@ export default class Home extends Component {
           </View>
           <View style={styles.footer}>
             <TouchableOpacity
+              testID={'validate'}
               onPress={() => {
                 navigation.navigate('Validate');
               }}
@@ -56,6 +59,7 @@ export default class Home extends Component {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
+              testID={'prospect'}
               onPress={() => {
                 navigation.navigate('Prospects');
               }}
