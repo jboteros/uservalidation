@@ -67,7 +67,7 @@ export default StyleSheet.create({
     zIndex: 200,
     flex: 0,
     width: 40,
-    height: 40,
+    height: 20,
     paddingVertical: 15,
   },
 
@@ -97,7 +97,7 @@ export default StyleSheet.create({
   welcomeText: {
     ...Fonts.style.regular(Colors.light, Fonts.size.medium, 'center'),
     width: '80%',
-    marginVertical: 20,
+    marginVertical: 10,
   },
 
   separator: {marginVertical: 20},

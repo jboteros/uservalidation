@@ -74,10 +74,7 @@ export default class Prospects extends Component {
                 <Image source={Images.random} style={styles.smallBtn} />
               </TouchableOpacity>
             </View>
-            <Text style={styles.welcomeTitle}>{'Visualizar prospectos'}</Text>
-            <Text style={styles.welcomeText}>
-              {'Puedes visualizar los prospectos utilizando los filtros'}
-            </Text>
+            <Text style={styles.welcomeTitle}>{'Lista de prospectos'}</Text>
           </View>
           <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}

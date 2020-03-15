@@ -79,7 +79,7 @@ export default ({validateUser}) => {
             <MyInput
               testID={'email'}
               keyboardType="email-address"
-              label="Correo electronico"
+              label="Correo electrónico"
               name="email"
               type="email"
             />
@@ -98,7 +98,7 @@ export default ({validateUser}) => {
 
             <Switch
               testID={'userPermissions'}
-              label="¿El usuario esta informado sobre las politicas de habeas data?"
+              label="¿El usuario esta informado sobre las políticas de habeas data?"
               name="userPermissions"
             />
             <TouchableOpacity

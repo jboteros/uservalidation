@@ -92,6 +92,7 @@ export default StyleSheet.create({
 
   welcomeTitle: {
     ...Fonts.style.bold(Colors.light, Fonts.size.h5, 'center'),
+    marginBottom: 10,
   },
 
   welcomeText: {

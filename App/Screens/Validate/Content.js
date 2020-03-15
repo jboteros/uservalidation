@@ -83,7 +83,7 @@ export default class Validate extends Component {
             <Text style={styles.welcomeTitle}>{'Validar usuario'}</Text>
             <Text style={styles.welcomeText}>
               {
-                'Completa el siguiente formulario para validar el prefil de riesgo del usuario'
+                'Completa el siguiente formulario para validar el perfil de riesgo del usuario'
               }
             </Text>
           </View>
