@@ -11,10 +11,11 @@ describe('AppNavigation', () => {
     await expect(element(by.id('subtitle'))).toExist;
   });
 
-  it('waitFor should be exported', async () => {
+  it('waitFor home container', async () => {
     await waitFor(element(by.id('homeScreen')))
       .toExist()
       .withTimeout(2000);
+
     await expect(element(by.id('homeScreen'))).toExist();
   });
 
@@ -42,6 +43,22 @@ describe('validate flow form', () => {
 
     waitFor(element(by.id('email'))).toExist();
     await element(by.id('email')).typeText('johnatan@jbotero.com');
+
+    waitFor(element(by.id('idTitle'))).toExist();
+
+    try {
+      waitFor(element(by.id('idDoc'))).toExist();
+      await element(by.id('idDoc')).typeText('8355593');
+    } catch (error) {
+      console.log('error', error);
+    }
+
+    try {
+      waitFor(element(by.id('userPermissions'))).toExist();
+      await element(by.id('userPermissions')).tap();
+    } catch (error) {
+      console.log('error', error);
+    }
 
     await element(by.id('backValidate')).tap();
   });

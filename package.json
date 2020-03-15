@@ -22,8 +22,6 @@
     "test:android-debug": "detox test --configuration android.emu.debug",
     "test:android-release": "detox test --configuration android.emu.release",
     "test:android-release-ci": "detox test --configuration android.emu.release -l verbose --headless --record-logs all --take-screenshots all",
-    "test:android-explicit-require": "detox test e2eExplicitRequire -c android.emu.release --runner-config e2eExplicitRequire/mocha.opts",
-    "test:android-explicit-require-ci": "detox test e2eExplicitRequire -c android.emu.release --runner-config e2eExplicitRequire/mocha.opts -l verbose --headless --record-logs all --take-screenshots all",
     "e2e:ios": "npm run build:ios && npm run test:ios",
     "e2e:android-debug": "npm run build:android-debug && npm run test:android-debug",
     "e2e:android-release": "npm run build:android-release && npm run test:android-release"
@@ -122,7 +120,7 @@
         "build": "cd android ; ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug ; cd -",
         "type": "android.emulator",
         "device": {
-          "avdName": "Pixel_API_28"
+          "avdName": "Pixel_2_API_R"
         }
       },
       "android.emu.release": {
@@ -130,7 +128,7 @@
         "build": "cd android ; ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release ; cd -",
         "type": "android.emulator",
         "device": {
-          "avdName": "Pixel_API_28"
+          "avdName": "Pixel_2_API_R"
         }
       }
     }

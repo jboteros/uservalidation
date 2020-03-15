@@ -84,10 +84,12 @@ export default ({validateUser}) => {
               type="email"
             />
 
-            <Text style={styles.titles}>{'Identidad del usuario'}</Text>
+            <Text testID={'idTitle'} style={styles.titles}>
+              {'Identidad del usuario'}
+            </Text>
 
             <MyInput
-              testID={'doc'}
+              testID={'idDoc'}
               label="Numero de documento"
               keyboardType="numeric"
               name="id"
