@@ -1,18 +1,12 @@
-
-
 # Users Validation
 
 Validate a user's id and assign points to a prospect, React Native by Johntatan Botero (johnatan@jbotero.com)
-
 
 ## Main Funcionalities
 
 #### List
 
 - In process
-
-
-
 
 ## Setup
 
@@ -23,6 +17,8 @@ yarn install
 # or
 npm install
 ```
+
+Install pods
 
 ```
 cd ios
@@ -56,4 +52,24 @@ npm run ios
 
 #or
 npm run android
+```
+
+## DETOX Test
+
+ios
+
+```
+yarn e2e:ios
+# or
+detox build --configuration ios.sim.debug
+detox test --configuration ios.sim.debug
+```
+
+android
+
+```
+e2e:android-debug
+# or
+detox build --configuration android.emu.debug
+detox test --configuration android.emu.debug
 ```

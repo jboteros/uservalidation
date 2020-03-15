@@ -20,7 +20,6 @@ module.exports = {
   setupFilesAfterEnv: [
     ...jestPreset.setupFiles,
     '@testing-library/react-native/cleanup-after-each',
-    '<rootDir>/enzyme.config.js',
   ],
   haste: {
     defaultPlatform: 'ios',
@@ -32,7 +31,7 @@ module.exports = {
   testEnvironmentOptions: {
     enzymeAdapter: 'react16',
   },
-  testMatch: ['**/tests/**/*.js?(x)', '**/(*.)(test).js?(x)'],
+  testMatch: ['**/__tests__/**/*.js?(x)', '**/(*.)(test).js?(x)'],
   transform: {
     '^.+\\.(js)$': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
   },
